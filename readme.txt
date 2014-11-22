@@ -10,7 +10,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WordPress to SugarCRM Lead Plug-in submit your custom form data to you SugarCRM Lead module. This will provided Widget to Connect your SugarCRM.
+WordPress to SugarCRM Lead Plug-in submit your custom form data to your SugarCRM Lead module. This will provided Widget to Connect your SugarCRM.
 
 == Description ==
                    
