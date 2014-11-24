@@ -49,10 +49,15 @@ Answer: Yes, Your credentials will be stored in MD5 format. So, nobody can acces
 3. Form on a webpage using Wdiget
 
 == Release ==
-1.0
+1.5
 
 == Upgrade Notice ==
 Not Applicable
 
 == Change log ==
-Not Applicable
+Version 1.5
+
+Provided the Custom label settings
+Make field required
+Calendar to collect birthrate etc.
+
