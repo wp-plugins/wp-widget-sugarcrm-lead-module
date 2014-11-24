@@ -17,25 +17,49 @@ class OEPL_Lead_Widget extends WP_Widget {
 		
 		$query = "SELECT * FROM ".OEPL_TBL_MAP_FIELDS." WHERE is_show = 'Y' ORDER BY display_order ASC";
 		$RS = $wpdb->get_results($query,ARRAY_A);
-		
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 		echo $args['before_title'] . $title . $args['after_title'];
 		echo "<p><div class='LeadFormMsg' style='color:red'></div></p>";
 		echo "<form id='WidgetForm' method='POST'>";
+		
+		$dateFieldArray = array('birthdate');
 		foreach ($RS as $module) {
+			### Add Date picker Class if filed type match
+			if($module['data_type'] == 'date'){
+				$JQclass = 'LeadFormEach DatePicker';
+				$readonly = 'readonly';
+			} else if($module['data_type'] == 'datetimecombo') {
+				$JQclass = 'LeadFormEach DateTimePicker';
+				$readonly = 'readonly';
+			} else {
+				$readonly = '';
+				$JQclass = 'LeadFormEach';
+			}
+			### Add required class if reqiured is true
+			if($module['required'] === 'Y'){
+				$JQclass .= ' LeadFormRequired';
+				$LabelAsterisk = ' <span style="color: red">*</span>';				
+			} else {
+				$LabelAsterisk = '';
+			}
+			### Display Custom label if is set
+			if($module['wp_custom_label'] && $module['wp_custom_label'] != ''){
+				$label = $module['wp_custom_label'].$LabelAsterisk;
+			} else {
+				$label = $module['wp_meta_label'].$LabelAsterisk;
+			}
 			echo "<p>";
-			echo "<label><strong>".$module['wp_meta_label']." :</strong></label><br>";
-			// echo $module['field_value']; exit;
-			echo getHTMLElement($module['field_type'],$module['wp_meta_key'],$module['field_value'],$module['field_value'],'','LeadFormEach');
+			echo "<label><strong>".$label." :</strong></label><br>";
+			echo getHTMLElement($module['field_type'],$module['wp_meta_key'],$module['field_value'],$module['field_value'],'',$JQclass,$readonly);
 			echo "</p>";
 		}
 		$random1 = rand(1,9);
 		$random2 = rand(1,9);
 		$_SESSION['captcha1'] = $random1;
 		$_SESSION['captcha2'] = $random2;
-		echo "<p>What is &nbsp;<strong>".$random1." + ".$random2."</strong>&nbsp; ? <input type='text' name='captcha' id='captcha' size='3' maxlength='3'/></p>" ;
+		echo "<p class='WidgetLeadFormCaptcha'>What is &nbsp;<strong>".$random1." + ".$random2."</strong>&nbsp; ? <input type='text' name='captcha' id='captcha' size='3' maxlength='3'/></p>" ;
 		echo "</form>";
 		echo "<p><input type='submit' name='submit' style ='' value='Submit' id='WidgetFormSubmit' class='' ></p>";
 		echo $args['after_widget'];
@@ -78,6 +102,9 @@ function WidgetFormJS(){
 			    	background-image: url(".OEPL_PLUGIN_URL."image/ajax-loader-button.gif) !important;
 			    	background-repeat: no-repeat !important;
 			    	background-position: 10px 5px;
+			    }
+			    .InvalidInput{
+					border-color: red !important;
 			    }
 			  </style>";
 }

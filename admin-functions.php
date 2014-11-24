@@ -8,16 +8,34 @@ function do_output_buffer() {
         ob_start();
 }
 
+### Plugin Update database changes Logic START
+function OEPL_plugin_update_function() {
+    global $OEPL_update_version,$wpdb;
+	$OEPL_current_version = get_option("OEPL_PLUGIN_VERSION");
+    if ($OEPL_current_version != $OEPL_update_version) {
+    	$sql = 'SHOW COLUMNS FROM '.OEPL_TBL_MAP_FIELDS;
+		$rows = $wpdb->get_col($sql);
+		if(!in_array('wp_custom_label',$rows)){
+			$wpdb->query('ALTER TABLE '.OEPL_TBL_MAP_FIELDS.' ADD `wp_custom_label` VARCHAR( 50 ) NOT NULL AFTER `wp_meta_label`');
+		}
+		if(!in_array('required',$rows)){
+			$wpdb->query("ALTER TABLE ".OEPL_TBL_MAP_FIELDS." ADD `required` ENUM( 'Y', 'N' ) NOT NULL DEFAULT 'N' AFTER `display_order`");
+		}
+		update_option('OEPL_PLUGIN_VERSION',$OEPL_update_version);
+    }
+}
+add_action('plugins_loaded', 'OEPL_plugin_update_function' );
+### Plugin Update database changes Logic END
+
 ## Front end Save Function
 add_action('wp_ajax_WidgetForm', 'WidgetForm');
 add_action('wp_ajax_nopriv_WidgetForm', 'WidgetForm');
 function WidgetForm(){
 	global $objSugar, $wpdb, $_SESSION, $_POST, $_GET;
-	
 	$successMsg = get_option('OEPL_SugarCRMSuccessMessage');
-	$failureMsg = get_option('OEPL_SugarCRMFailureMessage');
+	$failureMsg = get_option('OEPL_SugarCRMFailureMessvvage');
 	
-	if($_POST['captcha'] != ($_SESSION['captcha1'] +$_SESSION['captcha2']) ){	
+	if($_POST['captcha'] != ($_SESSION['captcha1'] + $_SESSION['captcha2']) ){	
 		echo "Invalid captcha code.Please try again";
 	} else {
 		$a = $objSugar->InsertLeadToSugar();
@@ -27,6 +45,10 @@ function WidgetForm(){
 			echo $failureMsg;
 		}
 	}
+	$random1 = rand(1,9);
+	$random2 = rand(1,9);
+	$_SESSION['captcha1'] = $random1;
+	$_SESSION['captcha2'] = $random2;
 	die();
 }
 ## Front end Save Function End
