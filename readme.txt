@@ -1,4 +1,4 @@
-=== WordPress to SugarCRM Lead ===
+﻿=== WordPress to SugarCRM Lead ===
 Contributors: Offshore Evolution Pvt Ltd
 Support : http://www.offshoreevolution.com/
 Donate link: 
@@ -25,7 +25,7 @@ http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_
 * You can use Widget one time only on each page, if will be display 2 time at single page – it will not work.
 * You must save your SugarCRM URL,username & password without which plugin won't work.
 * To use 'Pass user Remote Address with every lead' function you must create custom field in your SugarCRM lead module named 'lead_remote_ip'.
-* Now make any field hidden & provide it's value in Widget arguments in Widgets page.
+* Now make any field hidden & provide it's value in Widget arguments in Widgets page. You can optimize this feature for something like from which part of your website lead is generated !
 
 == Installation ==
 
@@ -49,9 +49,11 @@ Answer: Yes, Your credentials will be stored in MD5 format. So, nobody can acces
 
 == Screenshots ==
 
-1. Plugin settings page
-2. List of Lead module fields
-3. Form on a webpage using Wdiget
+1. Plugin settings page.
+2. List of Lead module fields.
+3. Widget page with a hidden field.
+4. Form with calendar on webpage.
+5. Form on webpage generated dynamically.
 
 == Release ==
 2.0
@@ -63,13 +65,13 @@ Not Applicable
 <strong>Version 2.1</strong><br />
 Release Date : 16th December 2014
 
-1. Settings option save method changed.
+1.Changed the method of saving SugarCRM settings to prevent conflicts.
 
 <strong>Version 2.0</strong><br />
 Release Date : 9th December 2014
 
 1. Now you can capture user's Remote Address with every lead.
-2. Option to pass any field as hidden field. You can set value for that hidden field in Widget arguments.
+2. Option to pass any field as hidden field. You can set value for that hidden field in Widget arguments. With this feature you can get information about from which part of your website lead is generated.
 
 <strong>Version 1.5</strong><br />
 Release Date : 27th November 2014
