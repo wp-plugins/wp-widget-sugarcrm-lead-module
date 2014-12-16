@@ -56,7 +56,7 @@ Answer: Yes, Your credentials will be stored in MD5 format. So, nobody can acces
 5. Form on webpage generated dynamically.
 
 == Release ==
-2.0
+2.1
 
 == Upgrade Notice ==
 Not Applicable
