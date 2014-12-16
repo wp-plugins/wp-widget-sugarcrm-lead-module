@@ -1,4 +1,4 @@
-=== WordPress to SugarCRM Lead ===
+﻿=== WordPress to SugarCRM Lead ===
 Contributors: Offshore Evolution Pvt Ltd
 Support : http://www.offshoreevolution.com/
 Donate link: 
@@ -6,7 +6,7 @@ Tags: SugarCRM, Sugar CRM, web-to-lead SugarCRM, web-to-lead Sugar CRM, contact 
 Minimum Requirement : 3.4
 Requires at least: 3.4
 Tested up to: 4.0
-Stable tag: 2.0
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,11 @@ Answer: Yes, Your credentials will be stored in MD5 format. So, nobody can acces
 Not Applicable
 
 == Change log ==
+<strong>Version 2.1</strong><br />
+Release Date : 16th December 2014
+
+1.Changed the method of saving SugarCRM settings to prevent conflicts.
+
 <strong>Version 2.0</strong><br />
 Release Date : 9th December 2014
 
