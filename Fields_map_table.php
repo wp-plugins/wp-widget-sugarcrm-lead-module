@@ -47,7 +47,7 @@ class Fields_Map_Table extends WP_List_Table {
             case 'field_name':
             	return $item['wp_meta_label'];
 			case 'custom_label':
-				return '<input type="text" name="wp_meta_label[]" value="'.$item['wp_custom_label'].'" size="20" maxlength="30" class ="wp_meta_label" />';
+				return '<input type="text" name="wp_meta_label[]" value="'.$item['wp_custom_label'].'" size="30" maxlength="50" class ="wp_meta_label" />';
             case 'is_show':
 				if($item['is_show'] == 'Y')
 					return "<span class='is_show_widget'>Yes</span>";
@@ -60,8 +60,13 @@ class Fields_Map_Table extends WP_List_Table {
 					return "<span class='is_show_widget'>Yes</span>";
 				if($item['required'] == 'N')
 					return "<span class='not_show_widget'>No</span>";
+			case 'hidden_field':
+				if($item['hidden'] == 'Y')
+					return "<span class='is_show_widget'>Yes</span>";
+				if($item['hidden'] == 'N')
+					return "<span class='not_show_widget'>No</span>";
             default:
-                return ''; //Show the whole array for troubleshooting purposes
+                return 'No Data'; //Show the whole array for troubleshooting purposes
         }
     }
 
@@ -104,6 +109,7 @@ class Fields_Map_Table extends WP_List_Table {
             'display_order' => 'Display Order',
             'is_show'    	=> 'Show on Widget',
             'required'		=> 'Required',
+            'hidden_field'		=> 'Hidden',
         );
         return $columns;
     }
@@ -128,7 +134,8 @@ class Fields_Map_Table extends WP_List_Table {
             'field_name'	=> array('field_name',false),     
             'display_order'	=> array('display_order',true),		//true means it's already sorted
             'is_show'    	=> array('is_show',true),			//true means it's already sorted
-        	'required'		=> array('required')
+        	'required'		=> array('required'),
+        	'hidden_field'		=> array('hidden'),
 		);
         return $sortable_columns;
     }
@@ -154,8 +161,10 @@ class Fields_Map_Table extends WP_List_Table {
             'remove_from_widget'	=> 'Remove from Widget',
             'update_display_order'	=> 'Update Display Order',
             'update_wp_meta_label'	=> 'Update Field Name',
-            'make_field_required'	=> 'Make Field Required',
-            'remove_required'		=> 'Remove Required Attribute',
+            'make_field_required'	=> 'Set Required',
+            'remove_required'		=> 'Unset Required',
+            'make_hidden'			=> 'Set Hidden',
+            'remove_hidden'			=> 'Unset Hidden',
         );
         return $actions;
     }
@@ -171,8 +180,8 @@ class Fields_Map_Table extends WP_List_Table {
 	function extra_tablenav(){
 		echo '<span class="subsubsub" >';
 		echo "<a href=".admin_url('admin.php?page=mapping_table&is_show=Y')." 
-			class='".($_GET[is_show] == 'Y' ? "current":"")."'>Enabled on Widget</a>&nbsp;|&nbsp;";
-		echo "<a href=".admin_url('admin.php?page=mapping_table&is_show=N')." class='".($_GET[is_show] == 'N' ? "current":"")."'>Disabled on Widget</a>&nbsp;|&nbsp;";
+			class='".($_GET['is_show'] == 'Y' ? "current":"")."'>Enabled on Widget</a>&nbsp;|&nbsp;";
+		echo "<a href=".admin_url('admin.php?page=mapping_table&is_show=N')." class='".($_GET['is_show'] == 'N' ? "current":"")."'>Disabled on Widget</a>&nbsp;|&nbsp;";
 		echo "<a href=".admin_url('admin.php?page=mapping_table').">Reset Filter</a>";
 		echo '</span>';
 	}
@@ -258,6 +267,27 @@ class Fields_Map_Table extends WP_List_Table {
 			}
 			$redirectFlag = TRUE;
 		}
+		else if('make_hidden' === $this->current_action())
+		{
+			$LeadsID = $_POST['Leads'];
+			foreach($LeadsID as $k=>$v)
+			{
+				$UpdateQuery = 'UPDATE '.OEPL_TBL_MAP_FIELDS.' SET hidden="Y" WHERE pid = '.$v.'';
+				$wpdb->query($UpdateQuery);
+			}
+			$redirectFlag = TRUE;
+		}
+		else if('remove_hidden' === $this->current_action())
+		{
+			$LeadsID = $_POST['Leads'];
+			foreach($LeadsID as $k=>$v)
+			{
+				$UpdateQuery = 'UPDATE '.OEPL_TBL_MAP_FIELDS.' SET hidden="N" WHERE pid = '.$v.'';
+				$wpdb->query($UpdateQuery);
+			}
+			$redirectFlag = TRUE;
+		}
+		
 		if($redirectFlag == TRUE)
 		{
 			if($_GET['orderby']) $orderby = '&orderby='.$_GET['orderby']; 	else $orderby = '';

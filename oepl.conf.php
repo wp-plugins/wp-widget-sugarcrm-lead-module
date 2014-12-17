@@ -22,7 +22,7 @@ define('OEPL_SUGARCRM_ADMIN_PASS'	, get_option('OEPL_SUGARCRM_ADMIN_PASS'));
 # Table list
 define('OEPL_TBL_MAP_FIELDS', 	 	 'oepl_crm_map_fields');
 
-$OEPL_update_version = '1.5';
+$OEPL_update_version = '2.1.5';
 
 require_once(OEPL_PLUGIN_DIR. "oepl.crm.cls.php");
 $objSugar = new OEPLSugarCRMClass;

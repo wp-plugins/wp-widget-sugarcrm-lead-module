@@ -21,6 +21,9 @@ function OEPL_plugin_update_function() {
 		if(!in_array('required',$rows)){
 			$wpdb->query("ALTER TABLE ".OEPL_TBL_MAP_FIELDS." ADD `required` ENUM( 'Y', 'N' ) NOT NULL DEFAULT 'N' AFTER `display_order`");
 		}
+		if(!in_array('hidden',$rows)){
+			$wpdb->query("ALTER TABLE ".OEPL_TBL_MAP_FIELDS." ADD `hidden` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `required`;");
+		}
 		update_option('OEPL_PLUGIN_VERSION',$OEPL_update_version);
     }
 }
@@ -53,6 +56,27 @@ function WidgetForm(){
 }
 ## Front end Save Function End
 
+## Save sugarCRM config START
+add_action('wp_ajax_OEPLsaveConfig', 'OEPLsaveConfig');
+function OEPLsaveConfig(){
+	$TestConn = new OEPLSugarCRMClass;
+	$TestConn->SugarURL  = $_POST['SugarURL'];
+	$TestConn->SugarUser = $_POST['SugarUser']; 
+	$TestConn->SugarPass = md5($_POST['SugarPass']); 
+	$t = $TestConn->LoginToSugar();
+	if(strlen($t)>10)
+	{
+		update_option('OEPL_SUGARCRM_URL' , $_POST['SugarURL']);
+		update_option('OEPL_SUGARCRM_ADMIN_USER' , $_POST['SugarUser']);
+		update_option('OEPL_SUGARCRM_ADMIN_PASS' , md5($_POST['SugarPass']));
+		echo 'Configuration saved successfully';
+	} else {
+		echo "Invalid login details. Please try again";
+	}
+	die();
+}
+## Save sugarCRM config END
+
 ##Lead fileds Sync function START
 add_action('wp_ajax_LeadFieldSync', 'LeadFieldSync');
 function LeadFieldSync(){
@@ -78,17 +102,11 @@ function SugarGeneralMsg()
 	$failureMsg = get_option('OEPL_SugarCRMFailureMessage');
 	if(!empty($_POST))
 	{
-		if($successMsg != FALSE || $successMsg == ''){
-			update_option("OEPL_SugarCRMSuccessMessage",$_POST['SuccessMessage']);
-		} else {
-			add_option("OEPL_SugarCRMSuccessMessage",$_POST['SuccessMessage']);
-		}
-		if($failureMsg != FALSE || $failureMsg == ''){
-			update_option("OEPL_SugarCRMFailureMessage",$_POST['FailureMessage']); 
-		} else {
-			add_option("OEPL_SugarCRMFailureMessage",$_POST['FailureMessage']);
-		}
-		echo "Custom messages has been updated.";
+		update_option("OEPL_SugarCRMSuccessMessage",$_POST['SuccessMessage']);
+		update_option("OEPL_SugarCRMFailureMessage",$_POST['FailureMessage']); 
+		update_option("OEPL_auto_IP_addr_status",$_POST['IPaddrStatus']); 
+		echo "General settings saved successfully.";
+		die();
 	}
 }
 ##General message save function END
@@ -110,29 +128,36 @@ function OEPL_SugarCRM_Submenu_function(){
 ##Submenu under SugarCRM Menu END
 
 ## SugarCRM Password Encryption
+/***************************************
+ * Code commented because sometimes hook
+ * does not fire because some conflicts 
+ * in tyhemes and other plugins
+ * *************************************
 add_action('update_option','SetHaleSugarCRMFields', 10, 2);
 function SetHaleSugarCRMFields(){
 	global $objSugar, $wpdb;
+	if(!empty($_POST))
+	{
+		if($_POST['OEPL_SUGARCRM_ADMIN_PASS'] != '')
+		{
+			delete_option( 'OEPL_SUGARCRM_ADMIN_PASS' );
+			add_option( 'OEPL_SUGARCRM_ADMIN_PASS', md5($_POST['OEPL_SUGARCRM_ADMIN_PASS']), NULL, 'no' );
+		}
+				
+		$objSugar = new OEPLSugarCRMClass;
+		$objSugar->SugarURL  = trim($_POST['OEPL_SUGARCRM_URL']);
+		$objSugar->SugarUser = trim($_POST['OEPL_SUGARCRM_ADMIN_USER']); 
+		$objSugar->SugarPass = md5($_POST['OEPL_SUGARCRM_ADMIN_PASS']);
 	
-	if($_POST['OEPL_SUGARCRM_ADMIN_PASS'] != '')
-	{
-		delete_option( 'OEPL_SUGARCRM_ADMIN_PASS' );
-		add_option( 'OEPL_SUGARCRM_ADMIN_PASS', md5($_POST['OEPL_SUGARCRM_ADMIN_PASS']), NULL, 'no' );
+		$t = $objSugar->LoginToSugar();
+		if(!strlen($t)>10)
+		{
+			return false;	
+		}
+		FieldSynchronize();
+		return null;
 	}
-			
-	$objSugar = new OEPLSugarCRMClass;
-	$objSugar->SugarURL  = trim($_POST['OEPL_SUGARCRM_URL']);
-	$objSugar->SugarUser = trim($_POST['OEPL_SUGARCRM_ADMIN_USER']); 
-	$objSugar->SugarPass = md5($_POST['OEPL_SUGARCRM_ADMIN_PASS']);
-
-	$t = $objSugar->LoginToSugar();
-	if(!strlen($t)>10)
-	{
-		return false;	
-	}
-	FieldSynchronize();
-	return null;
-}
+} */
 ## SugarCRM Password Encryption
 
 function FieldSynchronize()
