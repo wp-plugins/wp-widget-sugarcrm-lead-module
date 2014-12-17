@@ -6,7 +6,7 @@ Tags: SugarCRM, Sugar CRM, web-to-lead SugarCRM, web-to-lead Sugar CRM, contact 
 Minimum Requirement : 3.4
 Requires at least: 3.4
 Tested up to: 4.0.1
-Stable tag: 2.1.5
+Stable tag: 2.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,7 +54,7 @@ Answer: Yes, Your credentials will be stored in MD5 format. So, nobody can acces
 3. Form on a webpage using Wdiget
 
 == Release ==
-2.1.5
+2.1.6
 
 == Upgrade Notice ==
 Not Applicable
