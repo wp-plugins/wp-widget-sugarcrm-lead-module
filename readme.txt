@@ -1,5 +1,5 @@
 ﻿=== WordPress to SugarCRM Lead ===
-Contributors: Offshore Evolution Pvt Ltd
+Contributors: dipesh_patel
 Support : http://www.offshoreevolution.com/
 Donate link: 
 Tags: SugarCRM, Sugar CRM, web-to-lead SugarCRM, web-to-lead Sugar CRM, contact form Sugarcrm, contact us sugarCRM, web to lead sugarCRM, SugarCRM customization, SugarCRM customer portal, SugarCRM WordPress integration, collect info and send to Sugar CRM
