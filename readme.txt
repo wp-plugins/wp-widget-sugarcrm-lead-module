@@ -13,10 +13,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WordPress to SugarCRM Lead Plug-in submit your custom form data to your SugarCRM Lead module. This will provided Widget to Connect your SugarCRM.
 
 == Description ==
-                   
+
+**No license fees, 100% FREE, No Ads, No BloatWares**
+
 WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup solution for your business needs. Plugin will dinamically generate a Lead-form on a Widget based on your choices using fields which are mapped to your SugarCRM Lead module. You can change the Order & Label of the field any time you want. **Now convert your website traffic/visitors into business Leads**. It was never that easy before.
 
-=Features=
+**Features**
 * 2 minute setup.
 * No HTML.
 * User Friendly Form builder.
@@ -27,13 +29,11 @@ WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup s
 * Change success/failure message.
 * Capture user/visitor's Remote Address.
 
-=Upcoming features in next update=
+**Upcoming features**
 * Now you can attach files with every lead.
 * Get Email notifications for every lead generated.
 
-**No license fees, 100% FREE, No Ads, No BloatWares**
-
-=Setup=
+**Setup**
 1. Download & Enable plugin.
 2. Test connection with your SugarCRM & save your SugarCRM credentials.
 3. Synchronize Lead Fields.
@@ -42,7 +42,7 @@ WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup s
 
 *That's it ! As simple as that !*
 
-For SugarCRM Settings :
+**For SugarCRM Settings**
 SugarCRM URL :- Set your REST API SugarCRM URL. For customized SugarCRM, REST API URL would be “http OR https://&lt;Your Domain Name&gt;/service/v4_1/rest.php”. Service URL may be depend on your SugarCRM version. Please check your SugarCRM version and get REST API URL from below URL :
 [Click here](http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_7.2/70_API/Web_Services/00_API_Versioning/)
 
@@ -53,7 +53,7 @@ SugarCRM URL :- Set your REST API SugarCRM URL. For customized SugarCRM, REST AP
 * To use 'Pass user Remote Address with every lead' function you must create custom field in your SugarCRM lead module named 'lead_remote_ip'.
 * Now make any field hidden & provide it's value in Widget arguments in Widgets page. You can optimize this feature for something like from which part of your website lead is generated !
 
-Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead),[Google+](https://plus.google.com/106573739543605091204).
+Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead) & [Google+](https://plus.google.com/106573739543605091204).
 
 == Installation ==
 
