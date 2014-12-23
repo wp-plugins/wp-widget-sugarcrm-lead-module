@@ -59,7 +59,7 @@ SugarCRM URL : Set your REST API SugarCRM URL. For customized SugarCRM, REST API
 * To use 'Pass user Remote Address with every lead' function you must create custom field in your SugarCRM lead module named 'lead_remote_ip'
 * Now make any field hidden & provide it's value in Widget arguments in Widgets page. You can optimize this feature for something like from which part of your website lead is generated
 
-= Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead) & [Google+](https://plus.google.com/106573739543605091204). =
+**Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead) & [Google+](https://plus.google.com/106573739543605091204).**
 
 == Installation ==
 
