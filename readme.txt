@@ -18,27 +18,27 @@ WordPress to SugarCRM Lead Plug-in submit your custom form data to your SugarCRM
 
 WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup solution for your business needs. Plugin will dinamically generate a Lead-form on a Widget based on your choices using fields which are mapped to your SugarCRM Lead module. You can change the Order & Label of the field any time you want. **Now convert your website traffic/visitors into business Leads**. It was never that easy before.
 
-**Features**
-* 2 minute setup.
-* No HTML.
-* User Friendly Form builder.
-* Dynamically generated. 
-* Easy to manage.
-* Pass any field as hidden field with any value you want. You can also change that value anytime you want.
-* Mark any field mandatory.
-* Change success/failure message.
-* Capture user/visitor's Remote Address.
+=Features=
+* 2 minute setup
+* No HTML
+* User Friendly Form builder
+* Dynamically generated
+* Easy to manage
+* Pass any field as hidden field with any value you want. You can also change that value anytime you want
+* Mark any field mandatory
+* Change success/failure message
+* Capture user/visitor's Remote Address
 
-**Upcoming features**
-* Now you can attach files with every lead.
-* Get Email notifications for every lead generated.
+=Upcoming features=
+* Now you can attach files with every lead
+* Get Email notifications for every lead generated
 
-**Setup**
-1. Download & Enable plugin.
-2. Test connection with your SugarCRM & save your SugarCRM credentials.
-3. Synchronize Lead Fields.
-4. Now all your Lead fields will be mapped in 'Lead module' table. Choose which fields you want to display on widget.
-5. Go to widget page Drag & Drop SugarCRM Lead Form Widget to wherever you want.(P.S Only one widget per page)
+=Setup=
+1. Download & Enable plugin
+2. Test connection with your SugarCRM & save your SugarCRM credentials
+3. Synchronize Lead Fields
+4. Now all your Lead fields will be mapped in 'Lead module' table. Choose which fields you want to display on widget
+5. Go to widget page Drag & Drop SugarCRM Lead Form Widget to wherever you want (P.S Only one widget per page)
 
 *That's it ! As simple as that !*
 
@@ -46,12 +46,12 @@ WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup s
 SugarCRM URL :- Set your REST API SugarCRM URL. For customized SugarCRM, REST API URL would be “http OR https://&lt;Your Domain Name&gt;/service/v4_1/rest.php”. Service URL may be depend on your SugarCRM version. Please check your SugarCRM version and get REST API URL from below URL :
 [Click here](http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_7.2/70_API/Web_Services/00_API_Versioning/)
 
-**Important !**
-* You will require SugarCRM administrator level credentials to Plug-in it.
-* You can use Widget one time only on each page, if will be display 2 time at single page – it will not work.
-* You must save your SugarCRM URL, Username & Password without which plugin won't work.
-* To use 'Pass user Remote Address with every lead' function you must create custom field in your SugarCRM lead module named 'lead_remote_ip'.
-* Now make any field hidden & provide it's value in Widget arguments in Widgets page. You can optimize this feature for something like from which part of your website lead is generated !
+=Important !=
+* You will require SugarCRM administrator level credentials to Plug-in it
+* You can use Widget one time only on each page, if will be display 2 time at single page – it will not work
+* You must save your SugarCRM URL, Username & Password without which plugin won't work
+* To use 'Pass user Remote Address with every lead' function you must create custom field in your SugarCRM lead module named 'lead_remote_ip'
+* Now make any field hidden & provide it's value in Widget arguments in Widgets page. You can optimize this feature for something like from which part of your website lead is generated
 
 Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead) & [Google+](https://plus.google.com/106573739543605091204).
 
