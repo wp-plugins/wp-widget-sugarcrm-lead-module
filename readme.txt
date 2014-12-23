@@ -46,8 +46,10 @@ WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup s
 *That's it ! As simple as that !*
 
 **For SugarCRM Settings**
-SugarCRM URL :- Set your REST API SugarCRM URL. For customized SugarCRM, REST API URL would be “http OR https://&lt;Your Domain Name&gt;/service/v4_1/rest.php”. Service URL may be depend on your SugarCRM version. Please check your SugarCRM version and get REST API URL from below URL :
-[Click here](http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_7.2/70_API/Web_Services/00_API_Versioning/)
+
+SugarCRM URL : Set your REST API SugarCRM URL. For customized SugarCRM, REST API URL would be “http OR https://&lt;Your Domain Name&gt;/service/v4_1/rest.php”. Service URL may be depend on your SugarCRM version.
+
+[Click here](http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_7.2/70_API/Web_Services/00_API_Versioning/) to check your SugarCRM version and get REST API.
 
 **Important !**
 
