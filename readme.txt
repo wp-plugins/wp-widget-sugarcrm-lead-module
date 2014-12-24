@@ -18,6 +18,8 @@ WordPress to SugarCRM Lead Plug-in submit your custom form data to your SugarCRM
 
 WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup solution for your business needs. Plugin will dinamically generate a Lead-form on a Widget based on your choices using fields which are mapped to your SugarCRM Lead module. You can change the Order & Label of the field any time you want. **Now convert your website traffic/visitors into business Leads**. It was never that easy before.
 
+[youtube https://www.youtube.com/watch?v=pGTgSAbVY-s]
+
 **Features**
 
 * 2 minute setup
