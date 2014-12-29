@@ -16,6 +16,8 @@ WordPress to SugarCRM Lead Plug-in submit your custom form data to your SugarCRM
 
 **No license fees, 100% FREE, No Ads, No BloatWares**
 
+**Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead) , [Google+](https://plus.google.com/106573739543605091204) & [Youtube](https://www.youtube.com/playlist?list=PLnVyVy-trUeBhkdzwwp0_mO16QuZhxx1k).**
+
 WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup solution for your business needs. Plugin will dinamically generate a Lead-form on a Widget based on your choices using fields which are mapped to your SugarCRM Lead module. You can change the Order & Label of the field any time you want. **Now convert your website traffic/visitors into business Leads**. It was never that easy before.
 
 [youtube https://www.youtube.com/watch?v=pGTgSAbVY-s]
@@ -60,8 +62,6 @@ SugarCRM URL : Set your REST API SugarCRM URL. For customized SugarCRM, REST API
 * You must save your SugarCRM URL, Username & Password without which plugin won't work
 * To use 'Pass user Remote Address with every lead' function you must create custom field in your SugarCRM lead module named 'lead_remote_ip'
 * Now make any field hidden & provide it's value in Widget arguments in Widgets page. You can optimize this feature for something like from which part of your website lead is generated
-
-**Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead) & [Google+](https://plus.google.com/106573739543605091204).**
 
 == Installation ==
 
