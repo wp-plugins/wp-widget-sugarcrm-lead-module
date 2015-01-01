@@ -38,6 +38,9 @@ WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup s
 
 * Option to attach unlimited files with every lead.
 * Get Email notifications for each lead generation.
+* Create multiple forms using SugarCRM Lead fields.
+* Select Form in Widget.
+* Generate Shot-Code to set form anywhere in your WordPress website.
 
 **Setup**
 
