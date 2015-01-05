@@ -17,7 +17,7 @@ WordPress to SugarCRM Lead Plug-in submit your custom form data to you SugarCRM 
 WordPress to SugarCRM Lead plugin will provide you a Widget to display a Lead form at your WordPress front end using fields which are mapped with Lead module. Widget will draw the fields on the bases of “Order By” settings with value “On Widget”. For more information refer screen-shots.
 
 For SugarCRM Settings :
-SugarCRM URL :- Set your REST API SugarCRM URL. For customized SugarCRM, REST API URL would be “http OR https://&lt;Your Domain Name&gt;/service/v4_1/rest.php”. Service URL may be depend on your SugarCRM version. Please check your SugarCRM version and get REST API URL from below URL :
+SugarCRM URL :- Set your REST API SugarCRM URL. For customized SugarCRM, REST API URL would be “http OR https://<Your Domain Name>/service/v4_1/rest.php”. Service URL may be depend on your SugarCRM version. Please check your SugarCRM version and get REST API URL from below URL :
 
 http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_7.2/70_API/Web_Services/00_API_Versioning/
 
