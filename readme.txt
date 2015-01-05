@@ -76,17 +76,17 @@ SugarCRM URL : Set your REST API SugarCRM URL. For customized SugarCRM, REST API
 
 == Frequently Asked Questions ==
 
-1. Which user name I need to set? 
+**Which user name I need to set?**
 
-Answer: You must have to set Administrator level user/pass to submit form data into SugarCRM Lead module. Once you have successfully tested your credentials, Click on SAVE button to save your User/Password into WordPress database.
+You must have to set Administrator level user/pass to submit form data into SugarCRM Lead module. Once you have successfully tested your credentials, Click on SAVE button to save your User/Password into WordPress database.
 
-2.Leads not generating on SugarCRM side ?
+**Leads not generating on SugarCRM side ?**
 
-Answer : You haven't saved your SugarCRM credentials properly. Go to your SugarCRM menu check your login details once again by 'Test connection' and then click 'Save changes'. It should work now provided if details are correct.
+You haven't saved your SugarCRM credentials properly. Go to your SugarCRM menu check your login details once again by 'Test connection' and then click 'Save changes'. It should work now provided if details are correct.
 
-3. Is my credentials safe on WordPress?
+**Is my credentials safe on WordPress?**
 
-Answer: Yes, Your credentials will be stored in MD5 format. So, nobody can access or read your credentials even from database.
+Yes, Your credentials will be stored in MD5 format. So, nobody can access or read your credentials even from database.
 
 == Screenshots ==
 
