@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WordPress to SugarCRM Lead Plug-in submit your custom form data to you SugarCRM Lead module. This will provided Widget to Connect your SugarCRM.
 
 == Description ==
-                   
+
 WordPress to SugarCRM Lead plugin will provide you a Widget to display a Lead form at your WordPress front end using fields which are mapped with Lead module. Widget will draw the fields on the bases of “Order By” settings with value “On Widget”. For more information refer screen-shots.
 
 For SugarCRM Settings :
