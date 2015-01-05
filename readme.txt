@@ -2,7 +2,7 @@
 Contributors: Offshore Evolution Pvt Ltd
 Support : http://www.offshoreevolution.com/
 Donate link: 
-Tags: SugarCRM, Sugar CRM, web-to-lead SugarCRM, web-to-lead Sugar CRM, contact form Sugarcrm, contact us sugarCRM, web to lead sugarCRM, SugarCRM customization, SugarCRM customer portal, SugarCRM WordPress integration, collect info and send to Sugar CRM
+Tags: SugarCRM, Sugar CRM, Web-to-lead SugarCRM, web-to-lead Sugar CRM, contact form Sugarcrm, contact us sugarCRM, web to lead sugarCRM, SugarCRM customization, SugarCRM customer portal, SugarCRM WordPress integration, collect info and send to Sugar CRM
 Minimum Requirement : 3.4
 Requires at least: 3.4
 Tested up to: 4.1
