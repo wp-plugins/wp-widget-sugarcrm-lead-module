@@ -18,11 +18,10 @@ define('OEPL_SUGAR_USER_ID_KEY', 'oepl_sugar_contact_id');
 define('OEPL_SUGARCRM_URL'			, get_option('OEPL_SUGARCRM_URL') );
 define('OEPL_SUGARCRM_ADMIN_USER'	, get_option('OEPL_SUGARCRM_ADMIN_USER'));
 define('OEPL_SUGARCRM_ADMIN_PASS'	, get_option('OEPL_SUGARCRM_ADMIN_PASS'));
-
 # Table list
-define('OEPL_TBL_MAP_FIELDS', 	 	 'oepl_crm_map_fields');
-
-$OEPL_update_version = '2.1.5';
+define('OEPL_TBL_MAP_FIELDS'		, 'oepl_crm_map_fields');
+define( 'OEPL_FILE_UPLOAD_FOLDER' 	, '/OEPL');
+$OEPL_update_version = '2.1.7';
 
 require_once(OEPL_PLUGIN_DIR. "oepl.crm.cls.php");
 $objSugar = new OEPLSugarCRMClass;
@@ -40,6 +39,7 @@ function OEPL_frontend_script_load() {
 	wp_enqueue_style("Date_picker_css", OEPL_PLUGIN_URL ."style/jquery.datetimepicker.css", false, "1.0", "all");
 	wp_enqueue_script('admin_js',OEPL_PLUGIN_URL.'/js/admin.js', array( 'jquery' ));
 	wp_enqueue_script('Date_picker_js',OEPL_PLUGIN_URL.'/js/jquery.datetimepicker.js');	
+	wp_enqueue_script( 'jquery-form', array( 'jquery' ));
 }
 add_action( 'wp_enqueue_scripts', 'OEPL_frontend_script_load' );
 
@@ -49,7 +49,11 @@ function PluginStyleJS() {
 	wp_enqueue_style("OpelStyle", OEPL_PLUGIN_URL ."style/style.css", false, "1.0", "all");
 	wp_register_script('OpelJS', OEPL_PLUGIN_URL .'js/admin.js',array(),false, true);
 	wp_enqueue_script( 'OpelJS');
-	wp_enqueue_script('Date_picker_js',OEPL_PLUGIN_URL.'/js/jquery.datetimepicker.js');	
+	wp_enqueue_script( 'jquery-form', array( 'jquery' ));
+	wp_enqueue_script('Date_picker_js',OEPL_PLUGIN_URL.'/js/jquery.datetimepicker.js');
+}
+function OEPL_custom_pointer(){
+	$sugar_url_pointer = "<h3>Help</h3><p>This is test</p>";
 }
 
 function CreateMenu() {
@@ -77,6 +81,6 @@ global $current_user;
 	echo '<script type="text/javascript">
 			var OEPL_PLUGIN_URL = \''.OEPL_PLUGIN_URL.'\';
 			var OEPL_WP_URL = \''.admin_url().'\';
-	</script>';
+		  </script>';
 }
 ?>

@@ -45,7 +45,12 @@ class Fields_Map_Table extends WP_List_Table {
     function column_default($item, $column_name){
         switch($column_name){
             case 'field_name':
-            	return $item['wp_meta_label'];
+				if ($item['custom_field'] == "Y"){
+					$Extra = '<div style="float:right"><img src ="'.OEPL_PLUGIN_URL.'image/delete-icon.png" class="OEPL_Delete_Cust_Field" title="Delete this custom field" pid='.$item['pid'].' /></div>';
+				} else {
+					$Extra = '';
+				}
+            	return $item['wp_meta_label'].$Extra;
 			case 'custom_label':
 				return '<input type="text" name="wp_meta_label[]" value="'.$item['wp_custom_label'].'" size="30" maxlength="50" class ="wp_meta_label" />';
             case 'is_show':
@@ -61,10 +66,12 @@ class Fields_Map_Table extends WP_List_Table {
 				if($item['required'] == 'N')
 					return "<span class='not_show_widget'>No</span>";
 			case 'hidden_field':
-				if($item['hidden'] == 'Y')
-					return "<span class='is_show_widget'>Yes</span>";
-				if($item['hidden'] == 'N')
-					return "<span class='not_show_widget'>No</span>";
+				if ($item['custom_field'] == "Y"){
+					return '<img src ="'.OEPL_PLUGIN_URL.'image/NA_icon.png" title="Hidden feature is not applicable for this field" />';
+				} else {
+					if($item['hidden'] == 'Y') return "<span class='is_show_widget'>Yes</span>";
+					if($item['hidden'] == 'N') return "<span class='not_show_widget'>No</span>";
+				}
             default:
                 return 'No Data'; //Show the whole array for troubleshooting purposes
         }
@@ -81,7 +88,7 @@ class Fields_Map_Table extends WP_List_Table {
      **************************************************************************/
     function column_cb($item){
         return sprintf(
-            '<input type="checkbox" class="LeadTableCbx" name="%1$s[]" value="%2$s" />',
+            '<input type="checkbox" class="LeadTableCbx" name="Leads[]" value="%2$s" />',
             /*$1%s*/ $item['module'],  //Let's simply repurpose the table's singular label ("movie")
             /*$2%s*/ $item['pid']                //The value of the checkbox should be the record's id
         );
@@ -177,12 +184,13 @@ class Fields_Map_Table extends WP_List_Table {
 	  	</p>
 	<?php }
 	
-	function extra_tablenav(){
+	function extra_tablenav($item){
 		echo '<span class="subsubsub" >';
 		echo "<a href=".admin_url('admin.php?page=mapping_table&is_show=Y')." 
 			class='".($_GET['is_show'] == 'Y' ? "current":"")."'>Enabled on Widget</a>&nbsp;|&nbsp;";
 		echo "<a href=".admin_url('admin.php?page=mapping_table&is_show=N')." class='".($_GET['is_show'] == 'N' ? "current":"")."'>Disabled on Widget</a>&nbsp;|&nbsp;";
-		echo "<a href=".admin_url('admin.php?page=mapping_table').">Reset Filter</a>";
+		echo "<a href=".admin_url('admin.php?page=mapping_table&custom_field=Y')." class='".($_GET['custom_field'] == 'Y' ? "current":"")."'>Custom Browse fields</a>&nbsp;|&nbsp;";
+		echo "<a href=".admin_url('admin.php?page=mapping_table').">Reset</a>";
 		echo '</span>';
 	}
 	
@@ -215,7 +223,6 @@ class Fields_Map_Table extends WP_List_Table {
 		}
 		else if ('update_display_order' === $this->current_action())
 		{
-			//echo "<pre>"; print_r($_POST); echo "</pre>";
 			$LeadsID = $_POST['Leads'];
 			$DisplayOrder = $_POST['display_order'];
 			$DisplayOrderID = $_POST['display_order_ID'];
@@ -233,19 +240,16 @@ class Fields_Map_Table extends WP_List_Table {
 		{
 			$LeadsID = $_POST['Leads'];
 			$LabelsArray = $_POST['wp_meta_label'];
-			//echo "<pre>"; print_r($LabelsArray); echo "<pre>";
 			$DisplayOrderID = $_POST['display_order_ID'];
 			for($i = 0 ; $i<10 ; $i++)
 			{
 				if(in_array($DisplayOrderID[$i], $LeadsID))
 				{
 					$UpdateQuery = 'UPDATE '.OEPL_TBL_MAP_FIELDS.' SET wp_custom_label="'.$LabelsArray[$i].'" WHERE pid = '.$DisplayOrderID[$i].'';
-					//echo $UpdateQuery."<br>";
 					$wpdb->query($UpdateQuery);
 				}
 			}
 			$redirectFlag = TRUE;
-			//echo "<pre>"; print_r($_POST); echo "</pre>";
 		}
 		else if('make_field_required' === $this->current_action() )
 		{
@@ -294,7 +298,8 @@ class Fields_Map_Table extends WP_List_Table {
 			if($_GET['order']) $order = '&order='.$_GET['order'];			else $order = '';	
 			if($_GET['paged']) $paged = '&paged='.$_GET['paged'];			else $paged = '';
 			if($_GET['is_show']) $is_show = '&is_show='.$_GET['is_show'];	else $is_show = '';
-			$url = admin_url('admin.php?page=mapping_table'.$orderby.$order.$is_show.$paged);
+			if($_GET['custom_field'] && $_GET['custom_field'] == 'Y') $is_show = '&custom_field='.$_GET['custom_field'];	else $custom_field = '';
+			$url = admin_url('admin.php?page=mapping_table'.$orderby.$order.$is_show.$paged.$custom_field);
 			wp_redirect($url);
 			exit;
 		}
@@ -330,6 +335,10 @@ class Fields_Map_Table extends WP_List_Table {
 		if(!empty($_GET['is_show']))
 		{
 			$where = ' AND is_show = "'.$_GET['is_show'].'"';
+			$query .= $where;
+		}
+		if(!empty($_GET['custom_field']) && $_GET['custom_field'] == 'Y'){
+			$where = " AND custom_field ='".$_GET['custom_field']."'";
 			$query .= $where;
 		}
 		$orderby 	= !empty($_GET["orderby"]) 	? $_GET["orderby"]: 'ASC';

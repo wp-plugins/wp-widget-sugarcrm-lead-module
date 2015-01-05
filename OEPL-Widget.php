@@ -25,20 +25,25 @@ class OEPL_Lead_Widget extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		
 		echo "<p><div class='LeadFormMsg' style='color:red'></div></p>";
-		echo "<form id='WidgetForm' method='POST'>";
+		echo "<form id='OEPL_Widget_Form' method='POST' enctype='multipart/form-data'>";
+		echo "<input type='hidden' value='".wp_create_nonce( 'upload_thumb' )."' name='_nonce' />";
+  		echo '<input type="hidden" name="action" id="action" value="WidgetForm">';
 		foreach ($RS as $module) {
 			if($module['hidden'] == 'N')
 			{
 				### Add Date picker Class if filed type match
 				if($module['data_type'] == 'date'){
-					$JQclass = 'LeadFormEach DatePicker nonHidden';
+					$JQclass = 'DatePicker nonHidden';
 					$readonly = 'readonly';
 				} else if($module['data_type'] == 'datetimecombo') {
-					$JQclass = 'LeadFormEach DateTimePicker nonHidden';
+					$JQclass = 'DateTimePicker nonHidden';
 					$readonly = 'readonly';
+				} else if($module['data_type'] == 'file') {
+					$JQclass = 'files nonHidden';
+					$readonly = '';
 				} else {
 					$readonly = '';
-					$JQclass = 'LeadFormEach nonHidden';
+					$JQclass = 'nonHidden';
 				}
 				### Add required class if reqiured is true
 				if($module['required'] === 'Y'){
@@ -58,7 +63,7 @@ class OEPL_Lead_Widget extends WP_Widget {
 				echo getHTMLElement($module['field_type'],$module['wp_meta_key'],$module['field_value'],$module['field_value'],'',$JQclass,$readonly);
 				echo "</p>";
 			} else {
-				echo '<p><input type="hidden" class="LeadFormEach" name="'.$module['wp_meta_key'].'" value="'.$instance[$module['field_name']].'" /></p>';
+				echo '<input type="hidden" class="LeadFormEach" name="'.$module['wp_meta_key'].'" value="'.$instance[$module['field_name']].'" />';
 			}
 		}
 		$random1 = rand(1,9);
@@ -66,8 +71,9 @@ class OEPL_Lead_Widget extends WP_Widget {
 		$_SESSION['captcha1'] = $random1;
 		$_SESSION['captcha2'] = $random2;
 		echo "<p class='WidgetLeadFormCaptcha'>What is &nbsp;<strong>".$random1." + ".$random2."</strong>&nbsp; ? <input type='text' name='captcha' id='captcha' size='3' maxlength='3'/></p>" ;
-		echo "</form>";
+		
 		echo "<p><input type='submit' name='submit' style ='' value='Submit' id='WidgetFormSubmit' class='' ></p>";
+		echo "</form>";
 		echo $args['after_widget'];
 	}
 			
@@ -86,7 +92,7 @@ class OEPL_Lead_Widget extends WP_Widget {
 		</p>
 		
 		<?php
-		$query = "SELECT * FROM ".OEPL_TBL_MAP_FIELDS." WHERE is_show = 'Y' AND hidden='Y' ORDER BY display_order ASC";
+		$query = "SELECT * FROM ".OEPL_TBL_MAP_FIELDS." WHERE is_show = 'Y' AND hidden='Y' AND custom_field = 'N' ORDER BY display_order ASC";
 		$RS = $wpdb->get_results($query,ARRAY_A);
 		if(count($RS) > 0)
 		{
@@ -117,8 +123,6 @@ class OEPL_Lead_Widget extends WP_Widget {
 	
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		//echo "<pre>"; print_r($new_instance); print_r($old_instance); exit;
-		//$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		foreach($new_instance as $key=>$val)
 		{
 			$instance[$key] = (!empty($val)) ? strip_tags($val) : '';
@@ -137,12 +141,6 @@ function WidgetFormJS(){
 		  	var ajaxurl = '".admin_url( 'admin-ajax.php', 'relative' )."';
 		  </script>";
 		echo "<style>
-			    .loadingBtn{
-			    	padding-left: 35px !important;
-			    	background-image: url(".OEPL_PLUGIN_URL."image/ajax-loader-button.gif) !important;
-			    	background-repeat: no-repeat !important;
-			    	background-position: 10px 5px;
-			    }
 			    .InvalidInput{
 					border-color: red !important;
 			    }
