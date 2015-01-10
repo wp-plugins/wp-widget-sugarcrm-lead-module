@@ -1,7 +1,7 @@
 === WordPress to SugarCRM Lead ===
 Contributors: dipesh_patel
 Support : http://www.offshoreevolution.com/
-Donate link: 
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=dipesh%2e99869%40gmail%2ecom&lc=US&item_name=WordPress%20to%20SugarCRM%20Lead%20Free%20Plugin&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
 Tags: SugarCRM, Sugar CRM, web-to-lead SugarCRM, web-to-lead Sugar CRM, contact form Sugarcrm, contact us sugarCRM, web to lead sugarCRM, SugarCRM customization, SugarCRM customer portal, SugarCRM WordPress integration, collect info and send to Sugar CRM
 Minimum Requirement : 3.4
 Requires at least: 3.4
