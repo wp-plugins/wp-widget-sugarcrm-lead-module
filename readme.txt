@@ -99,11 +99,12 @@ Yes, Your credentials will be stored in MD5 format. So, nobody can access or rea
 
 == Screenshots ==
 
-1. Plugin settings page.
-2. List of Lead module fields.
-3. Widget page with a hidden field.
-4. Form with calendar on webpage.
-5. Form on webpage generated dynamically.
+1. Plugin API settings page.
+2. Plugin general settings page.
+3. List of Lead module fields.
+4. Widget page with a hidden field.
+5. Form with calendar on webpage.
+6. Form on webpage generated dynamically.
 
 == Release ==
 3.0
