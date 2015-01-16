@@ -1,7 +1,7 @@
 === WordPress to SugarCRM Lead ===
 Contributors: dipesh_patel
 Support : http://www.offshoreevolution.com/
-Donate link: 
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=dipesh%2e99869%40gmail%2ecom&lc=US&item_name=WordPress%20to%20SugarCRM%20Lead%20Free%20Plugin&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
 Tags: SugarCRM, Sugar CRM, web-to-lead SugarCRM, web-to-lead Sugar CRM, contact form Sugarcrm, contact us sugarCRM, web to lead sugarCRM, SugarCRM customization, SugarCRM customer portal, SugarCRM WordPress integration, collect info and send to Sugar CRM
 Minimum Requirement : 3.4
 Requires at least: 3.4
@@ -16,7 +16,7 @@ WordPress to SugarCRM Lead Plug-in submit your custom form data to your SugarCRM
 
 **No license fees, 100% FREE, No Ads, No BloatWares**
 
-**Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead) , [Google+](https://plus.google.com/106573739543605091204) & [Youtube](https://www.youtube.com/playlist?list=PLnVyVy-trUeBhkdzwwp0_mO16QuZhxx1k).**
+**Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead) , [Google+](https://plus.google.com/106573739543605091204) & [Youtube](https://www.youtube.com/c/DipeshPatel112).**
 
 WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup solution for your business needs. Plugin will dinamically generate a Lead-form on a Widget based on your choices using fields which are mapped to your SugarCRM Lead module. You can change the Order & Label of the field any time you want. **Now convert your website traffic/visitors into business Leads**. It was never that easy before.
 
