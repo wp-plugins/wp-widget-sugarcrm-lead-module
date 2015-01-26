@@ -38,7 +38,7 @@ WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup s
 * Option to redirect page on lead submission.
 * Connect to your SugarCRM or SuiteCRM even if it's protected with .htaccess
 
-** PRO Features **
+**PRO Features**
 
 * User-friendly Drag & Drop form builder.
 * Create multiple forms and use Shortcode generated anywhere on your WordPress site.
