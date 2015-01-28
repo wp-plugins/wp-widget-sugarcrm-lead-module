@@ -47,6 +47,10 @@ WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup s
 * Generate Short-Code to set form anywhere in your WordPress website.
 * Get premium support.
 
+[ScreenShots](http://in.pinterest.com/dipeshpatel1612/wordpress-to-sugarcrm-form-builder/)
+[Click here](https://www.youtube.com/watch?v=PLb31ZnOHds) for detailed video walk through of our 'Wordpress to SugarCRM form builder PRO'. 
+[Click here](http://www.offshoreevolution.com/portfolio/wordpress-to-sugarcrm-form-builder) to submit your inquiry to get PRO plugin and more detail about it.
+
 **Setup**
 
 1. Download & Enable plugin
@@ -105,9 +109,6 @@ Yes, Your credentials will be stored in MD5 format. So, nobody can access or rea
 4. Widget page with a hidden field.
 5. Form with calendar on webpage.
 6. Form on webpage generated dynamically.
-
-== Release ==
-3.2
 
 == Upgrade Notice ==
 Not Applicable
