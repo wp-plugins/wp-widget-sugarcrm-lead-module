@@ -103,6 +103,10 @@ You haven't saved your SugarCRM credentials properly. Go to your SugarCRM menu c
 
 Yes, Your credentials will be stored in MD5 format. So, nobody can access or read your credentials even from database.
 
+**I want to synchronize additional fields of differente module other then Lead module.**
+
+No you cannot synchronize fields of any other modules related with Lead. Only Lead module fileds will be synchronized.
+
 == Screenshots ==
 
 1. Plugin API settings page.
