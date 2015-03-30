@@ -14,6 +14,8 @@ WordPress to SugarCRM Lead Plug-in submit your custom form data to your SugarCRM
 
 == Description ==
 
+**This plugin will provide a Widget Form anywhere you want for easy,fast & hassle-free SugarCRM Leads.**
+
 **No license fees, 100% FREE, No Ads, No BloatWares**
 
 **Follow us on [Facebook](https://www.facebook.com/WordPressFreePluginSugarCRMLead) , [Google+](https://plus.google.com/106573739543605091204), [Pinterest](https://in.pinterest.com/dipeshpatel1612/) & [Youtube](https://www.youtube.com/c/DipeshPatel112).**
@@ -42,6 +44,7 @@ WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup s
 **PRO Features**
 
 * User-friendly Drag & Drop form builder.
+* Option to use Custom CAPTCHA method or **google reCAPTCHA** on your Lead-Forms.
 * Create multiple forms and use Shortcode generated anywhere on your WordPress site.
 * Unlimited Forms with different set of fields.
 * Additional email notification option for each form.
