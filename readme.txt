@@ -114,12 +114,13 @@ No you cannot synchronize fields of any other modules related with Lead. Only Le
 
 == Screenshots ==
 
-1. Plugin API settings page.
-2. Plugin general settings page.
+1. Plugin API settings.
+2. Plugin general settings.
 3. List of Lead module fields.
 4. Widget page with a hidden field.
 5. Form with calendar on webpage.
 6. Form on webpage generated dynamically.
+7. Message and Custom CSS settings
 
 == Upgrade Notice ==
 Not Applicable
