@@ -54,6 +54,8 @@ WordPress to SugarCRM Lead plugin is simple yet advance, easy & one time setup s
 
 [ScreenShots](http://in.pinterest.com/dipeshpatel1612/wordpress-to-sugarcrm-form-builder/)
 
+[Live demo](http://goo.gl/q5cDJa) of our 'WordPress to SugarCRM Form Builder PRO' plugin 
+
 [Click here](https://www.youtube.com/watch?v=PLb31ZnOHds) for detailed video walk through of our 'Wordpress to SugarCRM form builder PRO'. 
 
 [Click here](http://www.offshoreevolution.com/portfolio/wordpress-to-sugarcrm-form-builder) to submit your inquiry to get PRO plugin and more detail about it.
