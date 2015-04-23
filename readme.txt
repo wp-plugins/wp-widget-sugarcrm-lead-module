@@ -6,7 +6,7 @@ Tags: SugarCRM, Sugar CRM, web-to-lead SugarCRM, web-to-lead Sugar CRM,contact f
 Minimum Requirement : 3.4
 Requires at least: 3.4
 Tested up to: 4.1 
-Stable tag: 3.7
+Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
