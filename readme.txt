@@ -5,8 +5,8 @@ Donate link:
 Tags: SugarCRM, Sugar CRM, web-to-lead SugarCRM, web-to-lead Sugar CRM, contact form Sugarcrm, contact us sugarCRM, web to lead sugarCRM, SugarCRM customization, SugarCRM customer portal, SugarCRM WordPress integration, collect info and send to Sugar CRM
 Minimum Requirement : 3.4
 Requires at least: 3.4
-Tested up to: 4.1
-Stable tag: 3.7
+Tested up to: 4.2
+Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,17 +99,13 @@ Our goal is to expand this plugin as much as possible. If you like this plugin p
 
 == Frequently Asked Questions ==
 
-**Which user name I need to set?**
+**Which username/password do i need to set?**
 
-You must have to set Administrator level user/pass to submit form data into SugarCRM Lead module. Once you have successfully tested your credentials, Click on SAVE button to save your User/Password into WordPress database.
+You need to set username/password of your SugarCRM user. Once you have successfully tested your credentials, Click on SAVE button to save your User/Password into WordPress database.
 
 **Leads not generating on SugarCRM side ?**
 
 You haven't saved your SugarCRM credentials properly. Go to your SugarCRM menu check your login details once again by 'Test connection' and then click 'Save changes'. It should work now provided if details are correct.
-
-**Is my credentials safe on WordPress?**
-
-Yes, Your credentials will be stored in MD5 format. So, nobody can access or read your credentials even from database.
 
 **I want to synchronize additional fields of differente module other then Lead module.**
 
